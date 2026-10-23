@@ -1,0 +1,17 @@
+{
+  "name": "private-photo-timeline",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A local photo library with tags, dates and duplicate detection.",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "config": {
+    "port": 8806
+  }
+}

@@ -1,0 +1,3 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {filterPhotos,digest} from './public/core.js';
+test('searches tags and sorts without mutating originals',()=>{const p=[{name:'a.jpg',tags:'holiday',date:1},{name:'b.jpg',tags:'family',date:2}];assert.equal(filterPhotos(p,'HOLIDAY')[0].name,'a.jpg');assert.equal(filterPhotos(p,'')[0].name,'b.jpg');assert.equal(p[0].name,'a.jpg')});
+test('identical bytes share a digest',async()=>{const a=new TextEncoder().encode('photo');assert.equal(await digest(a),await digest(a));assert.notEqual(await digest(a),await digest(new TextEncoder().encode('other')))});
